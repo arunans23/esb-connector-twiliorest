@@ -34,27 +34,27 @@ Steps to follow in setting integration test.
  5. Update the twilio properties file at location
  "{TWILIOREST_HOME}/src/test/resources/artifacts/ESB/connector/config" as below.
 	
-	i)	 accountSid 	     - 	Use the AccounSID obtain under step 3 ii)
-	ii)  apiToken			 -  Use the API authentication token obtained under step 3 ii).
-	iii) apiUrl				 -  The API URL specific to the created twilio account (e.g. https://www.twilio.com).
-	iv)	 apiVersion			 -	The API version specific to the created twilio account (e.g. 2010-04-01 ).
-	v)	 friendlyname        -  The human-readable account name. Only accounts whose name exactly match this string are returned.
-	vi)	 status              -  The new status of the account: active, suspended, or closed.
-	vii) from                -  twilio verified  phone number.
-	viii)to                   -  twilio verified  phone number.
-	ix)	 messageBody          -  The text of the message you want to send, limited to 160 characters.
-	x)	 statusCallbackUrl    -  The URL that Twilio will request when the call ends to notify your application.
-	xi)  applicationSid       -  The ID of the application
-	xii) callSid              -  The identifier of the call.
-	xiii)recordingSid         -  The identifier of the recording.
-	xiv) transcriptionSid     -  The identifier of the transcription.
-	xv)  phoneNumber          -  Twilio phone number
-	xvi) incomingPhoneNumber  -  phone number which is receive the call
-	xvii)outgoingPhoneNumber  -  phone number which is make the call
-	xviii)incomingCallerId     -  caller id of the receiving call
-	ix)  outgoingCallerId     -  caller id of the outgoing call
-	X)   country              -  twilio Availabe country (e.g : US)
-	xi)  areaCode             -  Available country area code numbers (e.g :510)
+	 i) accountSid 	     - 	Use the AccounSID obtain under step 3 ii)
+	ii) apiToken         -  Use the API authentication token obtained under step 3 ii).
+       iii) apiUrl	     -  The API URL specific to the created twilio account (e.g. https://www.twilio.com).
+	iv) apiVersion	     -	The API version specific to the created twilio account (e.g. 2010-04-01 ).
+	 v) friendlyname     -  The human-readable account name. Only accounts whose name exactly match this string are returned.
+	vi) status           -  The new status of the account: active, suspended, or closed.
+	vii) from            -  twilio verified  phone number.
+       viii) to              -  twilio verified  phone number.
+	 ix) messageBody      -  The text of the message you want to send, limited to 160 characters.
+	  x) statusCallbackUrl-  The URL that Twilio will request when the call ends to notify your application.
+	 xi) applicationSid   -  The ID of the application
+	xii) callSid         -  The identifier of the call.
+       xiii) recordingSid    -  The identifier of the recording.
+	xiv) transcriptionSi -  The identifier of the transcription.
+	 xv)  phoneNumber     -  Twilio phone number
+	xvi) incomingPhoneNumber -  phone number which is receive the call
+       xvii) outgoingPhoneNumber  -  phone number which is make the call
+      xviii) incomingCallerId     -  caller id of the receiving call
+	 ix) outgoingCallerId     -  caller id of the outgoing call
+	  X) country              -  twilio Availabe country (e.g : US)
+	 xi) areaCode             -  Available country area code numbers (e.g :510)
 
 6. Navigate to "{TWILIOREST_HOME}/" and run the following command.
           $ mvn clean install
