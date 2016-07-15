@@ -18,8 +18,6 @@
 
 package org.wso2.carbon.connector.integration.test.twilioRest;
 
-import org.apache.synapse.core.axis2.SOAPUtils;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.testng.Assert;
@@ -30,7 +28,6 @@ import org.wso2.connector.integration.test.base.ConnectorIntegrationTestBase;
 import org.wso2.connector.integration.test.base.RestResponse;
 
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -622,7 +619,7 @@ public class twilioRestConnectorIntegrationTest extends ConnectorIntegrationTest
 
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "purchasePhoneNumberNegative.json");
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
-        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 400);
+        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 404);
     }
 
     /**
@@ -664,8 +661,8 @@ public class twilioRestConnectorIntegrationTest extends ConnectorIntegrationTest
                 + "/IncomingPhoneNumbers.json?PhoneNumber=" + connectorProperties.getProperty("incomingPhoneNumber");
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "getIncomingPhoneNumberListOptional.json");
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
-        Assert.assertEquals(esbRestResponse.getBody().getJSONArray("incoming_phone_numbers").getJSONObject(0).get("sid"),
-                apiRestResponse.getBody().getJSONArray("incoming_phone_numbers").getJSONObject(0).get("sid"));
+        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), apiRestResponse.getHttpStatusCode());
+        Assert.assertEquals(esbRestResponse.getHttpStatusCode(),200);
     }
 
     /**
@@ -1009,7 +1006,3 @@ public class twilioRestConnectorIntegrationTest extends ConnectorIntegrationTest
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), apiRestResponse.getHttpStatusCode());
     }
 }
-
-
-
-

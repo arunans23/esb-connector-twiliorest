@@ -9,8 +9,8 @@ Pre-requisites:
 Tested Platform: 
 
  - Microsoft WINDOWS V-7
- - UBUNTU 13.04
- - WSO2 ESB 4.9.0
+ - UBUNTU 13.04,14.04
+ - WSO2 ESB 5.0.0-BETA
  - Java 1.7
 
 Steps to follow in setting integration test.
@@ -20,7 +20,7 @@ Steps to follow in setting integration test.
 	<messageFormatter contentType="text/html" class="org.wso2.carbon.relay.ExpandingMessageFormatter"/>
 	<messageBuilder contentType="text/html" class="org.wso2.carbon.relay.BinaryRelayBuilder"/>
  
- 2. Compress modified ESB as wso2esb-4.9.0.zip and copy that zip file in to location "{TWILIOREST_HOME}/repository/".
+ 2. Compress modified ESB as wso2esb-5.0.0-BETA.zip and copy that zip file in to location "{TWILIOREST_HOME}/repository/" and add "-XX:-UseSplitVerifier" under $JVM_MEM_OPTS into {ESB_HOME}/bin/wso2server.sh"..
  
  3. Create a TwilioRest trial account and derive the API Token.
 	i) 	Using the URL "https://www.twilio.com/try-twilio" create a twilio free trial account.
@@ -36,25 +36,25 @@ Steps to follow in setting integration test.
 	
 	 i) accountSid 	      - 	Use the AccounSID obtain under step 3 ii)
 	ii) apiToken          -  Use the API authentication token obtained under step 3 ii).
-       iii) apiUrl	      -  The API URL specific to the created twilio account (e.g. https://www.twilio.com).
+   iii) apiUrl	      -  The API URL specific to the created twilio account (e.g. https://www.twilio.com).
 	iv) apiVersion	      -	The API version specific to the created twilio account (e.g. 2010-04-01 ).
 	 v) friendlyname      -  The human-readable account name. Only accounts whose name exactly match this string are returned.
 	vi) status            -  The new status of the account: active, suspended, or closed.
-	vii) from             -  twilio verified  phone number.
-       viii) to               -  twilio verified  phone number.
-	 ix) messageBody      -  The text of the message you want to send, limited to 160 characters.
-	  x) statusCallbackUrl-  The URL that Twilio will request when the call ends to notify your application.
-	 xi) applicationSid   -  The ID of the application
-	xii) callSid          -  The identifier of the call.
-       xiii) recordingSid     -  The identifier of the recording.
-	xiv) transcriptionSi  -  The identifier of the transcription.
-	 xv)  phoneNumber     -  Twilio phone number
-	xvi) incomingPhoneNumber  -  phone number which is receive the call
-       xvii) outgoingPhoneNumber  -  phone number which is make the call
-      xviii) incomingCallerId     -  caller id of the receiving call
-	 ix) outgoingCallerId     -  caller id of the outgoing call
-	  X) country              -  twilio Availabe country (e.g : US)
-	 xi) areaCode             -  Available country area code numbers (e.g :510)
+   vii) from             -  twilio verified  phone number.
+  viii) to               -  twilio verified  phone number.
+	ix) messageBody      -  The text of the message you want to send, limited to 160 characters.
+	 x) statusCallbackUrl-  The URL that Twilio will request when the call ends to notify your application.
+	xi) applicationSid   -  The ID of the application
+   xii) callSid          -  The identifier of the call.
+  xiii) recordingSid     -  The identifier of the recording.
+   xiv) transcriptionSi  -  The identifier of the transcription.
+	xv)  phoneNumber     -  Twilio phone number
+   xvi) incomingPhoneNumber  -  phone number which is receive the call
+  xvii) outgoingPhoneNumber  -  phone number which is make the call
+ xviii) incomingCallerId     -  caller id of the receiving call
+	ix) outgoingCallerId     -  caller id of the outgoing call
+	 X) country              -  twilio Availabe country (e.g : US)
+	xi) areaCode             -  Available country area code numbers (e.g :510)
 
 6. Navigate to "{TWILIOREST_HOME}/" and run the following command.
           $ mvn clean install
