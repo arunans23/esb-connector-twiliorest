@@ -109,7 +109,6 @@
                         <status>{$ctx:status}</status>
                     </twilioRest.updateAccount>
                 </case>
-
                 <!-- SMS -->
                 <case regex="urn:sendSms">
                     <twilioRest.sendSms>
